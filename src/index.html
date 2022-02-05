@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Dan Stewart" />
+
+        <title>Onion or not?</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+        <link rel="stylesheet" href="/css/main.css">
+        <script>
+            /*to prevent Firefox FOUC, this must be here*/
+            let FF_FOUC_FIX;
+        </script>
+    </head>
+
+    <body>
+        <div class="header is-center text-center">
+            <h1 class="title">The Onion or not?</h1>
+        </div>
+        <div class="game is-center text-center">
+            <game-view></game-view>
+        </div>
+    </body>
+
+    <script type="module">
+        import { registerControllers } from '/build/js/binder.js';
+        import { GameView } from '/build/js/controllers/game.js';
+
+        registerControllers([GameView]);
+    </script>
+</html>

@@ -1,0 +1,40 @@
+:root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #f3f3f6;
+  --color-primary: #14854F;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.6rem;
+  --font-color: #333333;
+  --font-family-sans: sans-serif;
+  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+
+.header {
+    /* background-color: #14854F; */
+    background: linear-gradient(to right, #14854F, #5aa983);
+    height: 30vh;
+    justify-content: center;
+    color: white;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.game {
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+a {
+    cursor: pointer;
+}
