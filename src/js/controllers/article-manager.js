@@ -56,7 +56,7 @@ class ArticleManager {
 
         // TODO: Change this to new URL
         if (window.location.hostname === "localhost") {
-            url = `https://onionornot.app${url}`;
+            url = `https://onion.danstewart.xyz${url}`;
         }
 
         try {
