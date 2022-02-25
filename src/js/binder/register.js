@@ -23,32 +23,45 @@ const registerController = (cls, { name = null } = {}) => {
 };
 
 /**
- * Wrapper around `registerController` for loading multiple controllers at once
- * We need to first set the `data-controller` attr on all controllers or `belongsToController` fails
+ * Register a controller (or multiple controllers)
  * 
  * Example
  * ```js
+ * registerControllers(MyController, MyOtherController);
+ * ```
+ * 
+ * ```js
  * registerControllers(
- *  [ MyController, {} ],
+ *  [ MyController ],
+ *  [ MyOtherController, { name: "my-custom-controller" } ],
  * )
  * ```
  * @param  {...any} controllers 
  */
 const registerControllers = (...controllers) => {
-    // TODO: Would be a little nicer if this allowed the controllers to be flat list instead of each item itself having to be a list
-    for (let [controller, config = {}] of controllers) {
+    // The reason we must register all controllers together is because we set the `data-controller` attribute during registration
+    // and we use this to check which controller a given DOM element belongs to (See `belongsToController`)
+
+    let controllerRegistry = [];
+
+    for (let controller of controllers) {
+        let config = {};
+        if (Array.isArray(controller)) {
+            [controller, config={}] = controller;
+        }
+
         const controllerName = controller.name;
         const controllerTag = config && config.name ? config.name : pascalToKebab(controllerName.replace("Controller", ""));
         document.querySelectorAll(controllerTag).forEach(el => el.setAttribute("data-controller", controllerTag.toLowerCase()));
+
+        controllerRegistry.push([ controller, config ]);
     }
 
-    for (let [controller, config] of controllers) {
+    for (let [controller, config] of controllerRegistry) {
         registerController(controller, config);
     }
 };
 
-// TODO: We should not export `registerController`, everyone should use `registerControllers` only
 export {
-    registerController,
     registerControllers,
 };

@@ -27,13 +27,13 @@
             <h1 class="title">The Onion or not?</h1>
         </div>
         <div class="game is-center text-center">
-            <game-view></game-view>
+            <game-view :render-on-init="false"></game-view>
         </div>
     </body>
 
     <script type="module">
         import { registerControllers } from '/build/js/binder.js';
-        import { GameView } from '/build/js/controllers/game.js';
+        import { GameView } from '/build/js/components/game.js';
 
         registerControllers([GameView]);
     </script>

@@ -331,12 +331,12 @@ const makeController = (base=HTMLElement, extendTag=null) => {
                     const handler = handlers[elType] || handlers.default;
                     handler(instance, varName, e);
 
-                    // If this element is @reactive this call render()
+                    // If this element is @bind.render this call render()
                     if (modifiers.includes('.render')) instance.render();
                 });
             };
 
-            const modifiers = [ "", ...permutations([ ".reactive" ], true) ];
+            const modifiers = [ "", ...permutations([ ".render" ], true) ];
             modifiers.forEach(modifier => {
                 // Handle any binds on the root node
                 if (this.root.hasAttribute(`@bind${modifier}`)) {

@@ -32,7 +32,7 @@ fi
 
 if [[ $serve == 1 ]]; then
     # Transpile JS
-    swc --watch src/js --out-dir src/build/ &
+    swc --source-maps --watch src/js --out-dir src/build/ &
 
     # Serve
     echo "Starting server at http://localhost:8000"
