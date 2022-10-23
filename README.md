@@ -8,11 +8,12 @@ A news headline guessing game.
 git clone git@github.com:danstewart/onionornot.git
 cd onionornot
 
-# Serve with
+# Serve on port 8000 with
 ./ctl.sh --serve
 
 # Or build with
 ./ctl.sh --build
+cp -r src/* /data/www/onion.danstewart.xyz/
 ```
 
 ---
