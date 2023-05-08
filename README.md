@@ -13,9 +13,7 @@ cd onionornot
 
 # Or build with
 ./ctl.sh --build
-cp -r src/* /data/www/onion.danstewart.xyz/
+
+# Build and deploy
+./ctl.sh --deploy
 ```
-
----
-
-Original VueJS code available [here](https://github.com/danstewart/onion-or-not)
