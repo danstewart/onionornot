@@ -5,6 +5,9 @@ A news headline guessing game.
 
 ### Get Started
 ```shell
+# Install swc
+npm i -g @swc/cli @swc/core
+
 git clone git@github.com:danstewart/onionornot.git
 cd onionornot
 
