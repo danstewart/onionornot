@@ -44,7 +44,8 @@ if [[ $serve == 1 ]]; then
 fi
 
 if [[ $build == 1 ]]; then
-    npx swc src/js --out-dir src/build/
+    cd src && npx swc js/ --out-dir build/
+    cd -
 fi
 
 if [[ $deploy == 1 ]]; then

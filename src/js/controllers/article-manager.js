@@ -20,7 +20,7 @@ class ArticleManager {
         };
 
         // Keep track of the last seen reddit posts so we don't show them again
-        this.lastSeen = { 
+        this.lastSeen = {
             date: today,
             "theonion": null,
             "nottheonion": null,
